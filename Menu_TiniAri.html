@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizzeria da Tini & Ari – Menu 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C0392B;
+    --cream: #FDF6EC;
+    --dark: #1a1008;
+    --gold: #D4A843;
+    --green: #2E7D32;
+    --orange: #E67E22;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+  }
+  header {
+    background: var(--dark);
+    color: var(--cream);
+    text-align: center;
+    padding: 36px 20px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(192,57,43,0.07) 12px, rgba(192,57,43,0.07) 24px);
+  }
+  .logo-area { position: relative; z-index: 1; }
+  .logo-emoji { font-size: 36px; margin-bottom: 6px; display: block; }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 7vw, 50px);
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+  h1 span { color: white; }
+  .tagline {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(253,246,236,0.55);
+    margin-top: 8px;
+    font-family: 'Lato', sans-serif;
+  }
+  .motto {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(253,246,236,0.65);
+    margin-top: 14px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+  .divider-gold {
+    display: flex; align-items: center; gap: 12px;
+    margin: 18px auto 0; max-width: 260px;
+  }
+  .divider-gold::before, .divider-gold::after {
+    content: ''; flex: 1; height: 1px;
+    background: var(--gold); opacity: 0.4;
+  }
+  .divider-gold span { color: var(--gold); font-size: 16px; }
+
+  .info-bar {
+    background: var(--red);
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+  }
+
+  main { max-width: 700px; margin: 0 auto; padding: 24px 16px 60px; }
+
+  .section-header {
+    display: flex; align-items: center; gap: 10px;
+    margin: 36px 0 16px;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 8px;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--red);
+  }
+  .section-icon { font-size: 20px; }
+
+  .pizza-grid { display: flex; flex-direction: column; gap: 0; }
+  .pizza-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(26,16,8,0.09);
+    gap: 12px;
+  }
+  .pizza-item:last-child { border-bottom: none; }
+  .pizza-info { flex: 1; min-width: 0; }
+  .pizza-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 3px;
+  }
+  .pizza-ing {
+    font-size: 12.5px;
+    color: #777;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  .pizza-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--red);
+    white-space: nowrap;
+    padding-top: 1px;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+  .badge-hot { background: var(--red); color: white; }
+  .badge-veg { background: var(--green); color: white; }
+  .badge-special { background: var(--gold); color: #1a1008; }
+
+  .note-box {
+    background: #fff8f0;
+    border-left: 3px solid var(--gold);
+    padding: 12px 14px;
+    margin-top: 8px;
+    border-radius: 0 6px 6px 0;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.8;
+  }
+  .note-box strong { color: var(--dark); font-size: 12.5px; }
+
+  .teglioni-box {
+    background: #fff3f3;
+    border: 1.5px solid rgba(192,57,43,0.2);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-top: 8px;
+  }
+  .teglioni-box p { font-size: 13px; color: #555; margin-bottom: 10px; line-height: 1.6; }
+  .teglioni-row {
+    display: flex; justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px dashed rgba(192,57,43,0.2);
+    font-size: 14px;
+  }
+  .teglioni-row:last-child { border-bottom: none; }
+  .teglioni-row span:last-child { font-weight: 700; color: var(--red); font-family: 'Playfair Display', serif; }
+
+  footer {
+    background: var(--dark);
+    color: rgba(253,246,236,0.6);
+    text-align: center;
+    padding: 28px 20px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 2;
+  }
+  footer strong {
+    color: var(--gold);
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-family: 'Playfair Display', serif;
+  }
+  .social { margin-top: 10px; font-size: 13px; color: rgba(253,246,236,0.5); }
+
+  @media (max-width: 480px) {
+    .pizza-name { font-size: 15px; }
+    .pizza-price { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <span class="logo-emoji">🍕</span>
+    <h1>Tini <span>&</span> Ari</h1>
+    <p class="tagline">Pizza a taglio · Focacce · Calzoni · Fritti · Marina di Bibbona</p>
+    <p class="motto">"Farina, acqua, lievito, sale e passione sono le componenti che rendono la nostra pizza leggera, digeribile, friabile..."</p>
+    <div class="divider-gold"><span>✦</span></div>
+  </div>
+</header>
+
+<div class="info-bar">
+  📍 Via dei Platani 52, Marina di Bibbona (Lotto C) &nbsp;|&nbsp; 📞 345 500 1051
+</div>
+
+<main>
+
+  <!-- PIZZE TONDE -->
+  <div class="section-header">
+    <span class="section-icon">🔴</span>
+    <h2>Pizze Tonde da Asporto</h2>
+  </div>
+  <div class="pizza-grid">
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Marinara <span class="badge badge-veg">veg</span></div>
+        <div class="pizza-ing">Pomodoro, aglio, origano</div>
+      </div>
+      <div class="pizza-price">€ 6,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Margherita <span class="badge badge-veg">veg</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, basilico</div>
+      </div>
+      <div class="pizza-price">€ 7,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Wurstel</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, wurstel</div>
+      </div>
+      <div class="pizza-price">€ 9,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Funghi <span class="badge badge-veg">veg</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, funghi</div>
+      </div>
+      <div class="pizza-price">€ 9,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Piccantina <span class="badge badge-veg">veg</span></div>
+        <div class="pizza-ing">Pomodorini, mozzarella, origano</div>
+      </div>
+      <div class="pizza-price">€ 9,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Diavola <span class="badge badge-hot">piccante</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, salame piccante</div>
+      </div>
+      <div class="pizza-price">€ 9,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Parmigiana <span class="badge badge-veg">veg</span></div>
+        <div class="pizza-ing">Pomodoro, melanzane, parmigiano</div>
+      </div>
+      <div class="pizza-price">€ 9,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Salsiccia</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, salsiccia</div>
+      </div>
+      <div class="pizza-price">€ 9,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Cotto e Funghi</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, cotto, funghi</div>
+      </div>
+      <div class="pizza-price">€ 9,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Bismark</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, cotto, uovo</div>
+      </div>
+      <div class="pizza-price">€ 9,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Napoli</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, capperi, acciughe</div>
+      </div>
+      <div class="pizza-price">€ 9,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Parma</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, crudo, grana</div>
+      </div>
+      <div class="pizza-price">€ 9,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">4 Formaggi <span class="badge badge-veg">veg</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, fontina, gorgonzola, parmigiano</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Vegetariana <span class="badge badge-veg">veg</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, melanzane, zucchine, pomodoro a fette</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Hawaii</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, cotto, ananas</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Re</div>
+        <div class="pizza-ing">Mozzarella, stracchino, crudo, rucola</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Regina</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, crudo, rucola, grana</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Tonno e Cipolla</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, tonno, cipolla</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Tonno e Salamino <span class="badge badge-hot">piccante</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, tonno, salame piccante</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Stracchino e Salsiccia</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, stracchino, salsiccia</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Salsiccia e Cipolla</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, salsiccia, cipolla</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Bufalina</div>
+        <div class="pizza-ing">Pomodoro, mozzarella di bufala, basilico</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Americana</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, wurstel, patatine</div>
+      </div>
+      <div class="pizza-price">€ 10,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">4 Stagioni</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, carciofi, olive, cotto, funghi</div>
+      </div>
+      <div class="pizza-price">€ 10,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Capricciosa</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, carciofi, olive, cotto</div>
+      </div>
+      <div class="pizza-price">€ 10,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Occhio di Bue</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, wurstel, funghi, uovo</div>
+      </div>
+      <div class="pizza-price">€ 10,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Salsiccia, Melanzane e Gorgonzola <span class="badge badge-hot">piccante</span></div>
+        <div class="pizza-ing">Pomodoro, salsiccia, melanzane, gorgonzola</div>
+      </div>
+      <div class="pizza-price">€ 10,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Speck, Gorgonzola e Noci</div>
+        <div class="pizza-ing">Mozzarella, gorgonzola, speck, noci</div>
+      </div>
+      <div class="pizza-price">€ 10,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Speck e Zucchine</div>
+        <div class="pizza-ing">Mozzarella, scamorza affumicata, speck, zucchine</div>
+      </div>
+      <div class="pizza-price">€ 10,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Contadina</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, speck, cipolla, uovo</div>
+      </div>
+      <div class="pizza-price">€ 11,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Calabrese <span class="badge badge-hot">piccante</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, cipolla, salame piccante, olive</div>
+      </div>
+      <div class="pizza-price">€ 11,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Tini <span class="badge badge-special">signature</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, cotto, funghi, carciofi, melanzane</div>
+      </div>
+      <div class="pizza-price">€ 11,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Ari <span class="badge badge-special">signature</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, cotto, funghi, wurstel, salame piccante</div>
+      </div>
+      <div class="pizza-price">€ 11,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Maialona <span class="badge badge-hot">piccante</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, wurstel, cotto, salsiccia, salame piccante</div>
+      </div>
+      <div class="pizza-price">€ 12,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Mexicana <span class="badge badge-hot">piccante</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, peperoncino, salame piccante, cipolla, mais</div>
+      </div>
+      <div class="pizza-price">€ 12,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Affumicata</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, speck, salsiccia, scamorza affumicata</div>
+      </div>
+      <div class="pizza-price">€ 12,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Boscaiola <span class="badge badge-hot">piccante</span></div>
+        <div class="pizza-ing">Pomodoro, mozzarella, funghi, salame piccante, scamorza affumicata</div>
+      </div>
+      <div class="pizza-price">€ 12,50</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Salsiccia e Friarielli</div>
+        <div class="pizza-ing">Mozzarella, salsiccia, friarielli, scamorza affumicata</div>
+      </div>
+      <div class="pizza-price">€ 13,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Golosa <span class="badge badge-special">top</span></div>
+        <div class="pizza-ing">Mozzarella, mortadella, scamorza affumicata, granella di pistacchio</div>
+      </div>
+      <div class="pizza-price">€ 13,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Tricolore <span class="badge badge-special">top</span></div>
+        <div class="pizza-ing">Pomodoro, stracciatella, pomodori secchi, basilico</div>
+      </div>
+      <div class="pizza-price">€ 13,00</div>
+    </div>
+
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Profumata <span class="badge badge-special">top</span></div>
+        <div class="pizza-ing">Stracciatella, mortadella, rucola, basilico</div>
+      </div>
+      <div class="pizza-price">€ 13,00</div>
+    </div>
+
+  </div>
+
+  <div class="note-box" style="margin-top:12px;">
+    <strong>➕ Aggiunte</strong>
+    Ingredienti extra: +1,00€ &nbsp;|&nbsp; Mozzarella di bufala / stracciatella: +2,00€ &nbsp;|&nbsp; Patatine fritte: +2,00€
+  </div>
+
+  <!-- CALZONI -->
+  <div class="section-header" style="margin-top:36px;">
+    <span class="section-icon">🫓</span>
+    <h2>Calzoni & Schiaccine</h2>
+  </div>
+  <div class="pizza-grid">
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Calzone Classico</div>
+        <div class="pizza-ing">Mozzarella, cotto</div>
+      </div>
+      <div class="pizza-price">€ 9,50</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Calzone Farcito</div>
+        <div class="pizza-ing">Pomodoro, mozzarella, cotto, funghi, carciofi</div>
+      </div>
+      <div class="pizza-price">€ 10,50</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Calzone Appetitoso</div>
+        <div class="pizza-ing">Mozzarella, cotto, salsiccia, wurstel</div>
+      </div>
+      <div class="pizza-price">€ 10,50</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Schiaccino Crudo/Cotto e Mozzarella</div>
+        <div class="pizza-ing">Con crudo o cotto e mozzarella</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Schiaccino alla Nutella</div>
+        <div class="pizza-ing">Con crema alla nocciola</div>
+      </div>
+      <div class="pizza-price">€ 8,00</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Pizza Bueno <span class="badge badge-special">dolce</span></div>
+        <div class="pizza-ing">Nutella, mascarpone, kinder bueno</div>
+      </div>
+      <div class="pizza-price">€ 12,00</div>
+    </div>
+  </div>
+
+  <!-- FRITTI -->
+  <div class="section-header" style="margin-top:36px;">
+    <span class="section-icon">🍟</span>
+    <h2>Fritto da Asporto</h2>
+  </div>
+  <div class="pizza-grid">
+    <div class="pizza-item">
+      <div class="pizza-info"><div class="pizza-name">Patate Fritte</div></div>
+      <div class="pizza-price">€ 4,50</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Zonzelle (coccoli) <span style="color:#888;font-size:12px;">15 pz.</span></div>
+      </div>
+      <div class="pizza-price">€ 4,50</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Zonzelle + Nutella <span style="color:#888;font-size:12px;">15 pz.</span></div>
+      </div>
+      <div class="pizza-price">€ 5,50</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Crocchette di Patate <span style="color:#888;font-size:12px;">8 pz.</span></div>
+      </div>
+      <div class="pizza-price">€ 5,00</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Anelli di Cipolla <span style="color:#888;font-size:12px;">8 pz.</span></div>
+      </div>
+      <div class="pizza-price">€ 5,50</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Anelli di Totano <span style="color:#888;font-size:12px;">8 pz.</span></div>
+      </div>
+      <div class="pizza-price">€ 6,00</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Chele di Granchio <span style="color:#888;font-size:12px;">6 pz.</span></div>
+      </div>
+      <div class="pizza-price">€ 6,00</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Mozzarelline Fritte <span style="color:#888;font-size:12px;">10 pz.</span></div>
+      </div>
+      <div class="pizza-price">€ 6,00</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Verdure Fritte</div>
+      </div>
+      <div class="pizza-price">€ 6,00</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Alici Fritte <span style="color:#888;font-size:12px;">10 pz.</span></div>
+      </div>
+      <div class="pizza-price">€ 7,00</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Nuggets di Pollo <span style="color:#888;font-size:12px;">10 pz.</span></div>
+      </div>
+      <div class="pizza-price">€ 6,00</div>
+    </div>
+  </div>
+
+  <!-- TEGLIONI -->
+  <div class="section-header" style="margin-top:36px;">
+    <span class="section-icon">🟥</span>
+    <h2>Teglioni su Prenotazione</h2>
+  </div>
+  <div class="teglioni-box">
+    <p>Dimensioni 60×40 cm · Disponibili solo su prenotazione</p>
+    <div class="teglioni-row"><span>Rossa</span><span>€ 19,00</span></div>
+    <div class="teglioni-row"><span>Margherita</span><span>€ 25,00</span></div>
+    <div class="teglioni-row"><span>Farcita (max 4 gusti con ✱)</span><span>€ 30,00</span></div>
+  </div>
+
+  <!-- TORTA DI CECI -->
+  <div class="section-header" style="margin-top:36px;">
+    <span class="section-icon">🟡</span>
+    <h2>Torta di Ceci</h2>
+  </div>
+  <div class="pizza-grid">
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Teglia Ø 25 cm</div>
+        <div class="pizza-ing">Solo su prenotazione (almeno 6h prima)</div>
+      </div>
+      <div class="pizza-price">€ 10,00</div>
+    </div>
+    <div class="pizza-item">
+      <div class="pizza-info">
+        <div class="pizza-name">Teglia Ø 50 cm</div>
+        <div class="pizza-ing">Solo su prenotazione (almeno 6h prima)</div>
+      </div>
+      <div class="pizza-price">€ 25,00</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <strong>Pizzeria da Tini & Ari</strong>
+  Via dei Platani 52 · Marina di Bibbona (Lotto C)<br>
+  📞 345 500 1051
+  <div class="social">
+    Instagram & Facebook: <strong style="color:rgba(253,246,236,0.75);font-family:'Lato',sans-serif;font-size:13px;display:inline;">@pizzeriadatinieari</strong>
+  </div>
+</footer>
+
+</body>
+</html>
